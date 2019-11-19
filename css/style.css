@@ -1,0 +1,495 @@
+html {
+    background-color: rgba(0, 151, 255, 0.29);
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+main,
+header {
+    margin: 0 2%;
+}
+
+main {
+    flex-grow: 1;
+}
+
+.logo {
+    display: block;
+    text-align: center;
+    margin-bottom: 2%;
+}
+
+#logoGbaf {
+    width: 20%;
+}
+
+.message {
+    color: red;
+    font-size: 20px;
+}
+
+label,
+input,
+select {
+    display: block;
+}
+
+#erreur {
+    display: block;
+    text-align: center;
+}
+
+.firstCo,
+.basicCo {
+    margin: 0 auto;
+    width: 100%;
+    text-align: -webkit-center;
+}
+
+.infoFirstCo {
+    display: block;
+    margin: 15% auto;
+    text-align: center;
+    width: 75%;
+}
+
+.firstCo label,
+.basicCo label {
+    font-size: 20px;
+}
+
+.basicCo {
+    text-align: center;
+}
+
+.firstCo form input {
+    width: 98%;
+}
+
+.inputLength {
+    width: 175px;
+    margin: auto;
+}
+
+.forget {
+    margin: auto;
+}
+
+.majPass {
+    margin: auto;
+}
+
+#imageUser {
+    width: 8%;
+}
+
+.logoUnique {
+    display: block;
+    margin: 20px auto 20px;
+    width: 300px;
+}
+
+.logoList {
+    margin-top: 5%;
+}
+
+.logoList,
+.contentArt {
+    margin: auto;
+    width: 300px;
+}
+
+.infoUser {
+    text-align: center;
+}
+
+.artList {
+    margin: 1% auto;
+    border: 1px solid black;
+    width: 90%;
+}
+
+.dateContent {
+    margin-left: 2%;
+}
+
+.artList img {
+    display: block;
+    margin: 2% auto 0;
+}
+
+.artList p.contentArt,
+.artList h3 {
+    text-align: center;
+}
+
+.artList a {
+    display: block;
+    text-align: center;
+    margin-top: 10%;
+    margin-left: 68%;
+    width: 30%;
+}
+
+.centerIndex {
+    text-align: center;
+}
+
+#listeCom {
+    display: inline-block;
+    text-decoration: underline;
+}
+
+.contentCom {
+    background-color: #d6d6d6;
+    padding: 10px 20px;
+}
+
+.coms {
+    border: rgba(0, 0, 0, 0.44) solid 1px;
+    margin: 0.5% ;
+}
+
+.titre {
+    text-align: center;
+}
+
+.artContent {
+    text-align: left;
+    margin: 0 auto;
+    width: 80%;
+}
+
+.artDateLike {
+    text-align: right;
+}
+
+.centerIndex h1 {
+    width: 90%;
+    margin: 0 auto 5%;
+    font-size: 24px;
+}
+
+.artIndex {
+    width: 90%;
+    margin: 5% auto 10%;
+    font-size: 20px;
+}
+
+#illustration {
+    width: 90%;
+    max-width: 600px;
+}
+
+button.fas {
+    border: none;
+    background: none;
+}
+
+.fa-thumbs-up {
+    color: green;
+    outline-style: none;
+}
+
+li {
+    list-style: none;
+}
+
+.fa-thumbs-down {
+    color: red;
+    outline-style: none;
+}
+
+div.liens_pages a {
+    display: block;
+    text-align: center;
+}
+
+#accueil {
+    width: 65px;
+    margin: 0 auto 1.5%;
+}
+
+.paramCompte {
+    width: 150px;
+    margin: 0 auto 10%;
+}
+
+#messageContact {
+    width: 98%;
+    margin-bottom: 1%;
+}
+
+div.liens_pages a,
+#addCom,
+#deco,
+.submitBasic,
+#submitFirstCo,
+#creatArt,
+#formAdmin,
+#creatUser,
+#creatCollab {
+    background-color: red;
+    color: white;
+    text-decoration: none;
+    padding: 0.5%;
+    border-radius: 20px;
+}
+
+#deco {
+    display: block;
+    text-align: center;
+    margin: 5% auto 1%;
+    width: 110px;
+}
+
+header form {
+    padding: 0.4%;
+    border-radius: 20px;
+}
+
+#creatArt {
+    display: block;
+    margin: 3% auto;
+    text-align: center;
+    width: 100px;
+}
+
+header input:hover {
+    cursor: pointer;
+}
+
+#deco,
+#addCom,
+.submitBasic,
+.majProfil,
+#submitFirstCo,
+.formCom,
+#formAdmin,
+#creatUser,
+#creatCollab,
+.register,
+.forget,
+.formContact,
+.majPass,
+.creatArt {
+    border: none;
+    outline-style: none;
+}
+
+#mdpForget {
+    text-decoration: none;
+    margin: 0.3% 0 0.8%;
+    display: block;
+}
+
+#textRegister {
+    text-align: center;
+    margin: 15% auto;
+}
+
+.textArea {
+    width: 95%;
+    margin: 0 auto;
+    display: block;
+}
+
+.majProfil,
+#formAdmin,
+#submitFirstCo,
+.majPass {
+    width: 100px;
+}
+
+.submitBasic {
+    margin: 10px auto 0;
+    width: 80px;
+}
+
+.register {
+    width: 120px;
+}
+
+.labelOne {
+    margin-top: 30px;
+}
+
+.majProfil,
+.formCom,
+.register,
+.forget,
+.formContact,
+.majPass,
+.creatArt {
+    background-color: red;
+    color: white;
+    padding: 0.2%;
+    border-radius: 20px;
+}
+
+.formCom,
+.forget {
+    width: 160px;
+}
+
+.formContact {
+    width: 70px;
+}
+
+#submitFirstCo {
+    margin: 0 auto 25%;
+}
+
+
+/********************************************** Footer *************************************************/
+
+footer {
+    margin-top: 5%;
+    background-color: rgba(0, 0, 0, 0.46);
+    width: 100%;
+
+}
+
+footer a {
+    padding: 3% 0;
+    text-decoration: none;
+    color: #ffffff;
+    display: inline-block;
+    width: 31%;
+}
+
+.footerLien {
+    text-align: center;
+}
+
+/********************************************** Javascript *************************************************/
+
+#formCom {
+    display: none;
+    margin-bottom: 2%;
+}
+
+#addCom {
+    display: inline-block;
+    margin-left: 4%;
+    margin-bottom: 4%;
+    width: 210px;
+}
+
+
+/********************************************** Responsive *************************************************/
+
+
+/* Tablette */
+
+@media screen and (min-width: 768px) {
+    #logoGbaf {
+        float: left;
+    }
+
+    .artList img {
+        float: left;
+        margin: 35px auto 0;
+        height: 60%;
+    }
+
+    .logoList,
+    .contentArt {
+        width: 250px;
+    }
+
+    .artList {
+        width: 95%;
+        height: 13%;
+    }
+
+    .artList p.contentArt,
+    .artList h3 {
+        text-align: left;
+        display: block;
+        margin-left: 40%;
+        width: 60%;
+    }
+
+    .artList a {
+        text-align: right;
+        margin-top: 0%;
+    }
+
+    .dateContent {
+        margin-left: 62%;
+        width: 36%;
+        text-align: right;
+    }
+
+    #deco {
+        margin: 0.5% 0 1% 2%;
+        float: left;
+    }
+
+    div.liens_pages a {
+        display: inline-block;
+    }
+
+    .liens_pages {
+        text-align: right;
+        margin-right: 3%;
+    }
+
+    .infoUser {
+        margin: 3.5% 3% 5% 0;
+        text-align: right;
+    }
+
+    #accueil {
+        margin-right: 2%;
+    }
+
+    footer {
+        margin-top: 7%;
+    }
+
+    .contentArt {
+        margin-bottom: 5%;
+    }
+
+    .textArea,
+    #messageContact {
+        width: 700px;
+        text-align: left;
+        margin: 0 0 10px 0;
+    }
+
+
+}
+
+/* PC */
+
+@media screen and (min-width:1024px) {
+    .artList p.contentArt,
+    .artList h3 {
+        margin-left: 30%;
+    }
+
+    .artList {
+        width: 900px;
+    }
+
+    .coms {
+        width: 900px;
+    }
+
+    #addCom {
+        width: 220px;
+    }
+}
+
+/* Grand écrans */
+
+@media screen and (min-width: 1960px) {
+
+}
