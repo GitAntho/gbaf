@@ -4,6 +4,8 @@ session_start();
 
 require 'autoloader.php';
 
+// Profil de l'utilisateur présent sur chaques pages
+
 if (isset($_SESSION['avatar'])) {
     if (isset($_SESSION['id_collab'])) {
         $avatar = '<img src="images/avatar_collab/' . $_SESSION['avatar'] . '" id="imageUser" alt="avatar collaborateur"> ';
