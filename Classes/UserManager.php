@@ -421,4 +421,29 @@ class UserManager
         $req->bindValue(':id', $maj->id_user());
         $req->execute();
     }
+
+    public function updateAvatarCollab($ext, $id)
+    {
+        $req = $this->db->prepare('
+            UPDATE collaborateur
+            SET avatar = :avatar
+            WHERE id_collab = :id');
+
+        $req->bindValue(':avatar', $ext);
+        $req->bindValue(':id', $id);
+        $req->execute();
+    }
+
+    public function updateAvatarUser($ext, $id)
+    {
+        $req = $this->db->prepare('
+            UPDATE utilisateur
+            SET avatar = :avatar
+            WHERE id_user = :id');
+
+
+        $req->bindValue(':avatar', $ext);
+        $req->bindValue(':id', $id);
+        $req->execute();
+    }
 }
