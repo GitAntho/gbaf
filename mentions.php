@@ -4,6 +4,8 @@ require 'header.php';
 
 ?>
 
+        <!-- Mentions légales généré sur internet -->
+
         <h2>MENTIONS LEGALES :</h2>
 
         <p style="text-align:justify"><strong> </strong><br/>
