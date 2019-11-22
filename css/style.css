@@ -306,8 +306,9 @@ header input:hover {
 }
 
 .submitBasic {
-    margin: 10px auto 0;
-    width: 80px;
+    margin: 0px auto 0;
+    width: 90px;
+    text-align: center;
 }
 
 .register {
