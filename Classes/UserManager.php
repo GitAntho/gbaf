@@ -12,6 +12,7 @@ class UserManager
         $reponse,
         $username,
         $avatar,
+        $admin_password,
         $message;
 
     // Constructeur
@@ -81,6 +82,28 @@ class UserManager
             $this->question = $tests['question'];
             $this->reponse = $tests['reponse'];
             $this->avatar = $tests['avatar'];
+        }
+    }
+
+    public function connectAdmin(User $login)
+    {
+        $req = $this->db->prepare('
+            SELECT id_user, nom, prenom_user, password, question, reponse, avatar, admin_password
+            FROM utilisateur
+            WHERE username = :username');
+
+        $req->bindValue(':username', $login->username());
+        $req->execute();
+
+        foreach ($req->fetchAll() as $tests) {
+            $this->id = $tests['id_user'];
+            $this->nom = $tests['nom'];
+            $this->prenom = $tests['prenom_user'];
+            $this->password = $tests['password'];
+            $this->question = $tests['question'];
+            $this->reponse = $tests['reponse'];
+            $this->avatar = $tests['avatar'];
+            $this->admin_password = $tests['admin_password'];
         }
     }
 
@@ -392,6 +415,18 @@ class UserManager
             WHERE id_user = :id');
 
         $req->bindValue(':password', $maj->password());
+        $req->bindValue(':id', $maj->id_user());
+        $req->execute();
+    }
+
+    public function majPasswordAdmin(User $maj)
+    {
+        $req = $this->db->prepare('
+            UPDATE utilisateur
+            SET admin_password = :password
+            WHERE id_user = :id');
+
+        $req->bindValue(':password', $maj->admin_password());
         $req->bindValue(':id', $maj->id_user());
         $req->execute();
     }

@@ -440,6 +440,90 @@ if (isset($_POST['submitAvatar'])) {
 
 <?php
 
+if ($_SESSION['id_user'] == 20)
+{
+    if (isset($_POST['submitPasswordAdmin'])) {
+
+        $oldPassword = $_POST['oldPassword'];
+        $password = $_POST['password'];
+        $mdp = $_POST['mdp'];
+
+        $password_hache = password_hash($oldPassword, PASSWORD_DEFAULT);
+
+        $maj = new User(
+            [
+                'username' => $info->username(),
+                'id_user' => $info->id_user(),
+                'admin_password' => $password_hache
+            ]
+        );
+
+        if ($maj->adminValid()) {
+            $manager->connectAdmin($maj);
+
+            $verifPassword = password_verify($oldPassword, $manager->admin_password);
+
+            if (!$verifPassword) {
+                $message = 'Mot de passe incorrect';
+            } else {
+                if ($password != $mdp) {
+                    $message = 'Les nouveaux mots de passes doivent être identique';
+                } elseif (empty($password) OR empty($mdp)) {
+                    $message = User::CASE_VIDE;
+                } else {
+
+                    if ($password != $mdp) {
+                        $message = 'Les deux nouveaux mots de passes doivent être identique';
+                    } else {
+
+                        $password_hache = password_hash($password, PASSWORD_DEFAULT);
+
+                        $maj = new User(
+                            [
+                                'username' => $info->username(),
+                                'id_user' => $info->id_user(),
+                                'admin_password' => $password_hache
+                            ]
+                        );
+
+                        if ($maj->majPasswordValidAdmin()) {
+
+                            $manager->majPasswordAdmin($maj);
+
+                            $message = 'Votre mot de passe a été mis à jour';
+                        }
+                    }
+                }
+            }
+        } else {
+            $message = User::CASE_VIDE;
+        }
+
+    }
+
+
+    ?>
+
+        <form method="post">
+            <fieldset>
+                <legend>Modifier votre mot de passe Administrateur</legend>
+
+                <label for="oldPassword">Ancien mot de passe : </label>
+                <input type="password" name="oldPassword" maxlength="50" id="oldPassword"><br>
+
+                <label for="password">Nouveau mot de passe : </label>
+                <input type="password" name="password" maxlength="50" id="password"><br>
+
+                <label for="mdp">Confimer le nouveau mot de passe : </label>
+                <input type="password" name="mdp" maxlength="50" id="mdp"><br>
+
+                <input type="submit" value="Mettre à jour" name="submitPasswordAdmin" class="majProfil">
+            </fieldset>
+        </form>
+
+<?php
+}
+
 require 'footer.php';
 
 ?>

@@ -9,6 +9,7 @@ class User
               $username,
               $password,
               $question,
+              $admin_password,
               $reponse;
 
     const CASE_VIDE = 'Merci de remplir tous les champs';
@@ -51,6 +52,11 @@ class User
         return !(empty($this->username) || empty($this->password));
     }
 
+    public function adminValid()
+    {
+        return !(empty($this->username) || empty($this->admin_password));
+    }
+
     public function majInfoValid()
     {
         return !(empty($this->nom) || empty($this->prenom_user) || empty($this->username) || empty($this->id_user));
@@ -59,6 +65,11 @@ class User
     public function majPasswordValid()
     {
         return !(empty($this->password) || empty($this->username) || empty($this->id_user));
+    }
+
+    public function majPasswordValidAdmin()
+    {
+        return !(empty($this->admin_password) || empty($this->username) || empty($this->id_user));
     }
 
     public function repValide()
@@ -115,6 +126,14 @@ class User
         }
     }
 
+    public function setAdmin_password($admin_password)
+    {
+        if (strlen($admin_password) >= 6)
+        {
+            $this->admin_password = $admin_password;
+        }
+    }
+
     public function setQuestion($question)
     {
         if (is_string($question))
@@ -141,6 +160,11 @@ class User
     public function nom()
     {
         return $this->nom;
+    }
+
+    public function admin_password()
+    {
+        return $this->admin_password;
     }
 
     public function prenom_user()

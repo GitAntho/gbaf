@@ -1,31 +1,44 @@
 <?php
 require 'header.php';
 
+$db = Database::getDB();
+$manager = new UserManager($db);
+
 
 if (isset($_POST['submitAdmin'])) {
     $admin = $_POST['admin'];
     $password = $_POST['password'];
-    $goodAdmin = 'admingbfa2019';
-    $goodPassword = 'eotcbx4x';
 
     if (empty($admin) or empty($password)) {
         $message = User::CASE_VIDE;
-    } else {
-        if ($admin != $goodAdmin) {
-            $message = 'Données incorrectes (admin)';
-        } else {
-            if ($password != $goodPassword) {
-                $message = 'Données incorrectes (password)';
-            } else {
+    }
+    else {
+        $password_hache = password_hash($password, PASSWORD_DEFAULT);
+
+        $login = new User(
+            [
+                'username' => $admin,
+                'admin_password' => $password_hache
+            ]
+        );
+
+        if ($login->adminValid()) {
+            $manager->connectAdmin($login);
+
+            $verifPassword = password_verify($password, $manager->admin_password);
+
+            if (!$verifPassword) {
+                $message = 'Mot de passe incorrect';
+            }
+            else {
                 $_SESSION['admin'] = 'admin';
             }
+
         }
     }
 }
 
 if (isset($_SESSION['admin'])) {
-    $db = Database::getDB();
-    $manager = new UserManager($db);
 
     if (isset($_POST['submitUser']) OR isset($_POST['submitCollab'])) {
         $password = $_POST['password'];
