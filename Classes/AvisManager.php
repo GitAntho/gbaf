@@ -101,7 +101,7 @@ class AvisManager
                 $req->bindValue(':liker', $like->liker());
                 $req->execute();
 
-                header('Location: index.php?idArticle=' . $like->article_id());
+                header('Location: index.php?id_article=' . $like->article_id());
             }
         }
 
@@ -116,7 +116,7 @@ class AvisManager
             $req->bindValue(':liker', $like->liker());
             $req->execute();
 
-            header('Location: index.php?idArticle=' . $like->article_id());
+            header('Location: index.php?id_article=' . $like->article_id());
         }
     }
 
@@ -167,7 +167,7 @@ class AvisManager
                 $req->bindValue(':liker', $like->liker());
                 $req->execute();
 
-                header('Location: index.php?idArticle=' . $like->article_id());
+                header('Location: index.php?id_article=' . $like->article_id());
             }
         }
 
@@ -182,7 +182,7 @@ class AvisManager
             $req->bindValue(':liker', $like->liker());
             $req->execute();
 
-            header('Location: index.php?idArticle=' . $like->article_id());
+            header('Location: index.php?id_article=' . $like->article_id());
         }
     }
 
@@ -233,7 +233,7 @@ class AvisManager
                 $req->bindValue(':disliker', $like->disliker());
                 $req->execute();
 
-                header('Location: index.php?idArticle=' . $like->article_id());
+                header('Location: index.php?id_article=' . $like->article_id());
             }
         }
 
@@ -248,7 +248,7 @@ class AvisManager
             $req->bindValue(':disliker', $like->disliker());
             $req->execute();
 
-            header('Location: index.php?idArticle=' . $like->article_id());
+            header('Location: index.php?id_article=' . $like->article_id());
         }
     }
 
@@ -301,7 +301,7 @@ class AvisManager
                 $req->bindValue(':disliker', $like->disliker());
                 $req->execute();
 
-                header('Location: index.php?idArticle=' . $like->article_id());
+                header('Location: index.php?id_article=' . $like->article_id());
             }
         }
 
@@ -316,7 +316,7 @@ class AvisManager
             $req->bindValue(':disliker', $like->disliker());
             $req->execute();
 
-            header('Location: index.php?idArticle=' . $like->article_id());
+            header('Location: index.php?id_article=' . $like->article_id());
         }
     }
 }

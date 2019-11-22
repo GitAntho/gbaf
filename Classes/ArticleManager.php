@@ -18,10 +18,10 @@ class ArticleManager
     public function getList()
     {
         $req = $this->db->query('
-            SELECT article.idArticle, article.titre, article.content, article.dateCreat, collaborateur.username, article.logo
+            SELECT article.id_article, article.titre, article.content, article.date_creat, collaborateur.username, article.logo
             FROM article
             INNER JOIN collaborateur ON article.collab_id = collaborateur.id_collab
-            ORDER BY idArticle');
+            ORDER BY id_article');
 
         $req->setFetchMode(PDO::FETCH_CLASS | PDO::FETCH_PROPS_LATE, 'Article');
 
@@ -29,7 +29,7 @@ class ArticleManager
 
         foreach ($listeArticle as $article)
         {
-            $article->setDateCreat(new DateTime($article->dateCreat()));
+            $article->setDate_creat(new DateTime($article->date_creat()));
         }
 
 
@@ -41,10 +41,10 @@ class ArticleManager
     public function getUnique($id)
     {
         $req = $this->db->prepare('
-            SELECT article.idArticle, article.titre, article.content, article.dateCreat, collaborateur.username, article.logo
+            SELECT article.id_article, article.titre, article.content, article.date_creat, collaborateur.username, article.logo
             FROM article
             INNER JOIN collaborateur ON article.collab_id = collaborateur.id_collab
-            WHERE article.idArticle = :id');
+            WHERE article.id_article = :id');
 
         $req->bindValue(':id', $id);
         $req->execute();
@@ -53,7 +53,7 @@ class ArticleManager
 
         $article = $req->fetch();
 
-        $article->setDateCreat(new DateTime($article->dateCreat()));
+        $article->setDate_creat(new DateTime($article->date_creat()));
 
         return $article;
     }

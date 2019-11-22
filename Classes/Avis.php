@@ -3,7 +3,7 @@
 
 class Avis
 {
-    protected $idAvis,
+    protected $id_avis,
               $article_id,
               $vote_user,
               $vote_collab,
@@ -59,13 +59,13 @@ class Avis
 
     // Setter
 
-    public function setIdAvis($idAvis)
+    public function setId_avis($id_avis)
     {
-        $idAvis = (int) $idAvis;
+        $id_avis = (int) $id_avis;
 
-        if ($idAvis > 0)
+        if ($id_avis > 0)
         {
-            $this->idAvis = $idAvis;
+            $this->id_avis = $id_avis;
         }
     }
 
@@ -121,9 +121,9 @@ class Avis
 
     // Getters
 
-    public function idAvis()
+    public function id_avis()
     {
-        return $this->idAvis;
+        return $this->id_avis;
     }
 
     public function article_id()

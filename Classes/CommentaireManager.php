@@ -40,7 +40,7 @@ class CommentaireManager
 
 
 
-        header('Location: index.php?idArticle=' . $com->articleId());
+        header('Location: index.php?id_article=' . $com->articleId());
     }
 
     public function addComCollab(Commentaire $com)
@@ -54,19 +54,19 @@ class CommentaireManager
         $req->bindValue(':content', $com->content());
         $req->execute();
 
-        header('Location: index.php?idArticle=' . $com->articleId());
+        header('Location: index.php?id_article=' . $com->articleId());
     }
 
     public function getList($id)
     {
         $req = $this->db->prepare('
-            SELECT commentaire.content, commentaire.dateCreat, collaborateur.prenom_collab, utilisateur.prenom_user
+            SELECT commentaire.content, commentaire.date_creat, collaborateur.prenom_collab, utilisateur.prenom_user
             FROM commentaire
             LEFT JOIN collaborateur ON commentaire.collab_id = collaborateur.id_collab
             LEFT JOIN utilisateur ON commentaire.user_id = utilisateur.id_user
-            LEFT JOIN article ON commentaire.articleId = article.idArticle
+            LEFT JOIN article ON commentaire.articleId = article.id_article
             WHERE commentaire.articleId = :id
-            ORDER BY commentaire.idCommentaire DESC
+            ORDER BY commentaire.id_commentaire DESC
             LIMIT 10');
 
 
@@ -80,7 +80,7 @@ class CommentaireManager
         $listeCom = $req->fetchAll();
 
         foreach ($listeCom as $com) {
-            $com->setDateCreat(new DateTime($com->dateCreat()));
+            $com->setDate_creat(new DateTime($com->date_creat()));
         }
 
         $req->closeCursor();

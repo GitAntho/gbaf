@@ -3,12 +3,12 @@
 
 class Article
 {
-    protected $idArticle,
+    protected $id_article,
               $collab_id,
               $logo,
               $titre,
               $content,
-              $dateCreat;
+              $date_creat;
 
     const CASE_VIDE = 'Merci de remplir tous les champs';
 
@@ -46,13 +46,13 @@ class Article
 
     // Setters
 
-    public function setIdArticle($idArticle)
+    public function setId_article($id_article)
     {
-        $idArticle = (int) $idArticle;
+        $id_article = (int) $id_article;
 
-        if ($idArticle > 0)
+        if ($id_article > 0)
         {
-            $this->idArticle = $idArticle;
+            $this->id_article = $id_article;
         }
     }
 
@@ -87,16 +87,16 @@ class Article
         }
     }
 
-    public function setDateCreat(DateTime $dateCreat)
+    public function setDate_creat(DateTime $date_creat)
     {
-        $this->dateCreat = $dateCreat;
+        $this->date_creat = $date_creat;
     }
 
     // Getters
 
-    public function idArticle()
+    public function id_article()
     {
-        return $this->idArticle;
+        return $this->id_article;
     }
 
     public function logo()
@@ -119,8 +119,8 @@ class Article
         return $this->collab_id;
     }
 
-    public function dateCreat()
+    public function date_creat()
     {
-        return $this->dateCreat;
+        return $this->date_creat;
     }
 }

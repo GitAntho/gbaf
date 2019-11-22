@@ -3,12 +3,12 @@
 
 class Commentaire
 {
-    protected $idCommentaire,
+    protected $id_commentaire,
               $user_id,
               $collab_id,
               $articleId,
               $content,
-              $dateCreat;
+              $date_creat;
 
     const CASE_VIDE = 'Merci de remplir tous les champs';
 
@@ -46,13 +46,13 @@ class Commentaire
 
     // Setters
 
-    public function setIdCommentaire($idCommentaire)
+    public function setId_commentaire($id_commentaire)
     {
-        $idCommentaire = (int) $idCommentaire;
+        $id_commentaire = (int) $id_commentaire;
 
-        if ($idCommentaire > 0)
+        if ($id_commentaire > 0)
         {
-            $this->idCommentaire = $idCommentaire;
+            $this->id_commentaire = $id_commentaire;
         }
     }
 
@@ -94,16 +94,16 @@ class Commentaire
         }
     }
 
-    public function setDateCreat(DateTime $dateCreat)
+    public function setDate_creat(DateTime $date_creat)
     {
-        $this->dateCreat = $dateCreat;
+        $this->date_creat = $date_creat;
     }
 
     // Getters
 
-    public function idCommentaire()
+    public function id_commentaire()
     {
-        return $this->idCommentaire;
+        return $this->id_commentaire;
     }
 
     public function user_id()
@@ -126,8 +126,8 @@ class Commentaire
         return $this->content;
     }
 
-    public function dateCreat()
+    public function date_creat()
     {
-        return $this->dateCreat;
+        return $this->date_creat;
     }
 }

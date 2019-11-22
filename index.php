@@ -12,10 +12,10 @@ $managerAvis = new AvisManager($db);
 
 if (isset($_COOKIE['valid'])) {
     if (isset($_SESSION['nom']) AND isset($_SESSION['prenom'])) {
-        if (isset($_GET['idArticle'])) {
-            $article = $manager->getUnique($_GET['idArticle']);
+        if (isset($_GET['id_article'])) {
+            $article = $manager->getUnique($_GET['id_article']);
 
-            $idArticle = $_GET['idArticle'];
+            $id_article = $_GET['id_article'];
 
             /**
              * Comptage des like/Dislike
@@ -23,7 +23,7 @@ if (isset($_COOKIE['valid'])) {
 
             $count = new Avis(
                 [
-                    'article_id' => $idArticle
+                    'article_id' => $id_article
                 ]
             );
 
@@ -39,7 +39,7 @@ if (isset($_COOKIE['valid'])) {
                     $like = new Avis(
                         [
                             'liker' => 1,
-                            'article_id' => $idArticle,
+                            'article_id' => $id_article,
                             'vote_collab' => $_SESSION['id_collab']
                         ]
                     );
@@ -55,7 +55,7 @@ if (isset($_COOKIE['valid'])) {
                     $like = new Avis(
                         [
                             'liker' => 1,
-                            'article_id' => $idArticle,
+                            'article_id' => $id_article,
                             'vote_user' => $_SESSION['id_user']
                         ]
                     );
@@ -76,7 +76,7 @@ if (isset($_COOKIE['valid'])) {
                     $dislike = new Avis(
                         [
                             'disliker' => 1,
-                            'article_id' => $idArticle,
+                            'article_id' => $id_article,
                             'vote_collab' => $_SESSION['id_collab']
                         ]
                     );
@@ -92,7 +92,7 @@ if (isset($_COOKIE['valid'])) {
                     $dislike = new Avis(
                         [
                             'disliker' => 1,
-                            'article_id' => $idArticle,
+                            'article_id' => $id_article,
                             'vote_user' => $_SESSION['id_user']
                         ]
                     );
@@ -124,7 +124,7 @@ if (isset($_COOKIE['valid'])) {
         <p class="artContent"><?= $article->content() ?></p>
 
         <div class="artDateLike">
-            <p>Posté le <?= $article->dateCreat()->format('d/m/Y à H\hi') ?> par <?= $article->username ?></p>
+            <p>Posté le <?= $article->date_creat()->format('d/m/Y à H\hi') ?> par <?= $article->username ?></p>
 
             <form method="post">
                 <button type="submit" class="fas fa-thumbs-up" name="like"><?= $count->liker() ?></button>
@@ -159,7 +159,7 @@ if (isset($_COOKIE['valid'])) {
 
             <?php
 
-            foreach ($managCom->getList($idArticle) as $commentaire) {
+            foreach ($managCom->getList($id_article) as $commentaire) {
 
                 $content = $commentaire->content();
 
@@ -168,7 +168,7 @@ if (isset($_COOKIE['valid'])) {
                 ?>
 
         <div class="coms">
-            <p>Posté le <?= $commentaire->dateCreat()->format('d/m/Y à H\hi') ?> par <?= $prenom ?></p>
+            <p>Posté le <?= $commentaire->date_creat()->format('d/m/Y à H\hi') ?> par <?= $prenom ?></p>
             <p class="contentCom"><?= $content ?></p>
         </div>
 
@@ -177,7 +177,7 @@ if (isset($_COOKIE['valid'])) {
 
             if (isset($_POST['submit'])) {
                 $content = $_POST['content'];
-                $articleId = $_GET['idArticle'];
+                $articleId = $_GET['id_article'];
 
                 if (isset($_SESSION['id_user'])) {
                     $id = $_SESSION['id_user'];
@@ -258,8 +258,8 @@ if (isset($_COOKIE['valid'])) {
             <img src="images/logo/<?= $article->logo() ?>" class="logoList" alt="logo article">
             <h3><?= $article->titre() ?></h3>
             <p class="contentArt"><?= $content ?></p>
-            <a href="?idArticle=<?= $article->idArticle() ?>">En savoir plus</a>
-            <p class="dateContent">Posté le <?= $article->dateCreat()->format('d/m/Y à H\hi') ?>
+            <a href="?id_article=<?= $article->id_article() ?>">En savoir plus</a>
+            <p class="dateContent">Posté le <?= $article->date_creat()->format('d/m/Y à H\hi') ?>
                         par <?= $article->username ?></p>
         </div>
                 <?php
@@ -357,7 +357,7 @@ if (isset($_COOKIE['valid'])) {
 
         <?php
     }
-    if (isset($_SESSION['username']) AND isset($_SESSION['nom']) AND !isset($_GET['idArticle'])) {
+    if (isset($_SESSION['username']) AND isset($_SESSION['nom']) AND !isset($_GET['id_article'])) {
         ?>
 
         <a href="creatArticle" id="creatArt">Créer un article</a>
@@ -447,7 +447,7 @@ else {
 <?php
 }
 
-if (isset($_GET['idArticle'])) {
+if (isset($_GET['id_article'])) {
     ?>
 
         <script src="script/commentaire.js"></script>
