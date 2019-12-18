@@ -1,5 +1,5 @@
 <?php
-
+ob_start();
 session_start();
 
 require 'autoloader.php';
@@ -39,6 +39,7 @@ if (isset($_POST['yes'])) {
         <link rel="stylesheet" href="css/style.css">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="stylesheet" href="css/normalize.css">
+        <link rel="icon" type="image/png" href="images/favicon.png">
         <script src="https://kit.fontawesome.com/e3f63e0ef5.js" crossorigin="anonymous"></script>
     </head>
     <body>
