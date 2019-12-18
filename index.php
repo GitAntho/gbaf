@@ -119,7 +119,7 @@ if (isset($_COOKIE['valid'])) {
 
         <img src="images/logo/<?= $article->logo() ?>" class="logoUnique" alt="logo article">
 
-        <h2 class="titre"><?= $article->titre() ?></h2>
+        <h2 class="titre"><?= htmlspecialchars($article->titre()) ?></h2>
 
         <p class="artContent"><?= $article->content() ?></p>
 
@@ -168,7 +168,7 @@ if (isset($_COOKIE['valid'])) {
                 ?>
 
         <div class="coms">
-            <p>Posté le <?= $commentaire->date_creat()->format('d/m/Y à H\hi') ?> par <?= $prenom ?></p>
+            <p>Posté le <?= $commentaire->date_creat()->format('d/m/Y à H\hi') ?> par <?= htmlspecialchars($prenom) ?></p>
             <p class="contentCom"><?= $content ?></p>
         </div>
 
@@ -256,11 +256,11 @@ if (isset($_COOKIE['valid'])) {
 
         <div class="artList">
             <img src="images/logo/<?= $article->logo() ?>" class="logoList" alt="logo article">
-            <h3><?= $article->titre() ?></h3>
+            <h3><?= htmlspecialchars($article->titre()) ?></h3>
             <p class="contentArt"><?= $content ?></p>
             <a href="?id_article=<?= $article->id_article() ?>">En savoir plus</a>
             <p class="dateContent">Posté le <?= $article->date_creat()->format('d/m/Y à H\hi') ?>
-                        par <?= $article->username ?></p>
+                        par <?= htmlspecialchars($article->username) ?></p>
         </div>
                 <?php
             }

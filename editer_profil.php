@@ -365,13 +365,13 @@ if (isset($_POST['submitAvatar'])) {
                 <legend>Modifier des informations personnelles</legend>
 
                 <label for="nom">Nom : </label>
-                <input type="text" name="nom" maxlength="50" value="<?= $info->nom() ?>" id="nom"><br>
+                <input type="text" name="nom" maxlength="50" value="<?= htmlspecialchars($info->nom()) ?>" id="nom"><br>
 
                 <label for="prenom">Prénom : </label>
-                <input type="text" name="prenom" maxlength="50" value="<?= $prenom ?>" id="prenom"><br>
+                <input type="text" name="prenom" maxlength="50" value="<?= htmlspecialchars($prenom) ?>" id="prenom"><br>
 
                 <label for="username">Nom d'utilisateur : </label>
-                <input type="text" name="username" maxlength="50" value="<?= $info->username() ?>" id="username"><br>
+                <input type="text" name="username" maxlength="50" value="<?= htmlspecialchars($info->username()) ?>" id="username"><br>
 
                 <input type="submit" value="Mettre à jour" name="submitInfo" class="majProfil">
             </fieldset>
