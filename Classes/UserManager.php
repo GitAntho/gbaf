@@ -85,6 +85,27 @@ class UserManager
         }
     }
 
+    public function connectVisiteur(User $login)
+    {
+        $req = $this->db->prepare('
+            SELECT id_user, nom, prenom_user, password, question, reponse, avatar
+            FROM utilisateur
+            WHERE id_user = :id_user');
+
+        $req->bindValue(':id_user', $login->id_user());
+        $req->execute();
+
+        foreach ($req->fetchAll() as $tests) {
+            $this->id = $tests['id_user'];
+            $this->nom = $tests['nom'];
+            $this->prenom = $tests['prenom_user'];
+            $this->password = $tests['password'];
+            $this->question = $tests['question'];
+            $this->reponse = $tests['reponse'];
+            $this->avatar = $tests['avatar'];
+        }
+    }
+
     public function connectAdmin(User $login)
     {
         $req = $this->db->prepare('

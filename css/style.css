@@ -52,9 +52,14 @@ select {
 
 .infoFirstCo {
     display: block;
-    margin: 15% auto;
+    margin: 8% auto;
     text-align: center;
     width: 75%;
+}
+
+.visiteur {
+    display: block;
+    margin: 3% auto;
 }
 
 .firstCo label,
@@ -67,7 +72,7 @@ select {
 }
 
 .firstCo form input {
-    width: 98%;
+    width: 200px;
 }
 
 .inputLength {
@@ -238,6 +243,7 @@ div.liens_pages a,
     text-decoration: none;
     padding: 0.5%;
     border-radius: 20px;
+    cursor: pointer;
 }
 
 #deco {
@@ -276,6 +282,7 @@ header input:hover {
 .forget,
 .formContact,
 .majPass,
+.visiteur,
 .creatArt {
     border: none;
     outline-style: none;
@@ -309,6 +316,7 @@ header input:hover {
     margin: 0px auto 0;
     width: 90px;
     text-align: center;
+    cursor: pointer;
 }
 
 .register {
@@ -325,11 +333,13 @@ header input:hover {
 .forget,
 .formContact,
 .majPass,
+.visiteur,
 .creatArt {
     background-color: red;
     color: white;
     padding: 0.2%;
     border-radius: 20px;
+    cursor: pointer;
 }
 
 .formCom,

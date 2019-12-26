@@ -268,6 +268,24 @@ if (isset($_COOKIE['valid'])) {
     } /**
      * Connexion basique
      */
+    else if (isset($_POST['visiteurs'])) {
+        $login = new User(
+            [
+                'id_user' => 22
+            ]
+        );
+
+        $managerUser->connectVisiteur($login);
+
+        session_start();
+
+        $_SESSION['id_user'] = $managerUser->id;
+        $_SESSION['username'] = $managerUser->username;
+        $_SESSION['nom'] = $managerUser->nom;
+        $_SESSION['prenom'] = $managerUser->prenom;
+
+        header('Location: index.php');
+    }
 
     else {
         if (isset($_POST['submit'])) {
@@ -355,6 +373,10 @@ if (isset($_COOKIE['valid'])) {
             </form>
         </div>
 
+        <form method="post">
+            <input type="submit" class="visiteur" value="Cliquer ici pour voir le site en tant que visiteur" name="visiteurs">
+        </form>
+
         <?php
     }
     if (isset($_SESSION['username']) AND isset($_SESSION['nom']) AND !isset($_GET['id_article'])) {
@@ -368,6 +390,27 @@ if (isset($_COOKIE['valid'])) {
  */
 
 else {
+
+    if (isset($_POST['visiteur'])) {
+        $login = new User(
+                [
+                        'id_user' => 22
+                ]
+        );
+
+        $managerUser->connectVisiteur($login);
+
+        session_start();
+
+        $_SESSION['id_user'] = $managerUser->id;
+        $_SESSION['username'] = $managerUser->username;
+        $_SESSION['nom'] = $managerUser->nom;
+        $_SESSION['prenom'] = $managerUser->prenom;
+
+        setcookie('valid', 'valid', time() + 365 * 24 * 3600 * 10, null, null, false, true);
+
+        header('Location: index.php');
+    }
 
     if (isset($_POST['submitConnection'])) {
         $username = $_POST['username'];
@@ -418,7 +461,12 @@ else {
 
 
 ?>
-        <h4 class="infoFirstCo">Avant de pouvoir acceder au site, merci de vous identifier avec les identifiant qui vous ont étés fournis. Si vous ne les avez pas encore reçus, merci d\'attendre un peu, l\'admin va vous les fournir si vous y avez le droit.</h4>' .
+        <h4 class="infoFirstCo">Avant de pouvoir acceder au site, merci de vous identifier avec les identifiant qui vous ont étés fournis. Si vous ne les avez pas encore reçus, merci d\'attendre un peu, l\'admin va vous les fournir si vous y avez le droit.</h4>
+
+
+        <form method="post">
+            <input type="submit" class="visiteur" value="Cliquer ici pour voir le site en tant que visiteur" name="visiteur">
+        </form>
 
         <div class="message">
             <?php
