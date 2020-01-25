@@ -64,23 +64,23 @@ if (isset($_SESSION['id_collab'])) {
             <div class="message">
             <?php
             if (isset($message)) {
-                echo $message, '<br>';
+                echo $message;
             }
             if ($manager->message) {
-                echo $manager->message, '<br>';
+                echo $manager->message;
             }
             ?>
 
             </div>
 
             <label for="logo">Votre logo : </label>
-            <input type="file" name="logo" id="logo"><br>
+            <input type="file" name="logo" id="logo">
 
             <label for="titre">Titre : </label>
-            <input type="text" name="titre" maxlength="50" id="title"><br>
+            <input type="text" name="titre" maxlength="50" id="title">
 
             <label for="content">Contenu : </label>
-            <textarea name="content" rows="15" cols="150" class="textArea" id="content"></textarea><br>
+            <textarea name="content" rows="15" cols="150" class="textArea" id="content"></textarea>
 
             <input type="submit" value="Créer l'article" name="submit" class="creatArt">
         </form>

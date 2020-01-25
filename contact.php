@@ -36,7 +36,7 @@ if (isset($_POST['submit'])) {
         <div class="message">
             <?php
             if (isset($message)) {
-                echo $message, '<br>';
+                echo $message;
             }
             ?>
 
@@ -44,13 +44,13 @@ if (isset($_POST['submit'])) {
 
         <form method="post">
             <label for="name">Nom *</label>
-            <input type="text" id="name" name="name" maxlength="50" required><br>
+            <input type="text" id="name" name="name" maxlength="50" required>
 
             <label for="mail">Email *</label>
-            <input type="email" id="mail" name="email" maxlength="50" required><br>
+            <input type="email" id="mail" name="email" maxlength="50" required>
 
             <label for="messageContact">Message *</label>
-            <textarea name="message" id="messageContact" rows="10" cols="75" required></textarea><br>
+            <textarea name="message" id="messageContact" rows="10" cols="75" required></textarea>
 
             <input type="submit" value="Envoyer" name="submit" class="formContact">
         </form>

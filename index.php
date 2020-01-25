@@ -135,10 +135,10 @@ if (isset($_COOKIE['valid'])) {
             <div class="message">
                     <?php
                     if (isset($message)) {
-                        echo $message, '<br>';
+                        echo $message;
                     }
                     if ($manager->message) {
-                        echo $manager->message, '<br>';
+                        echo $manager->message;
                     }
 
                     /**
@@ -218,7 +218,7 @@ if (isset($_COOKIE['valid'])) {
                 <div class="message">
                     <?php
                     if (isset($message)) {
-                        echo $message, '<br>';
+                        echo $message;
                     }
                     ?>
                 </div>
@@ -356,13 +356,13 @@ if (isset($_COOKIE['valid'])) {
                 <div class="message">
                     <?php
                     if (isset($message)) {
-                        echo $message, '<br>';
+                        echo $message;
                     }
                     ?>
                 </div>
 
                 <label for="username" class="labelOne">Nom d'utilisateur : </label>
-                <input type="text" name="username" maxlength="50" class="inputLength" id="username"><br>
+                <input type="text" name="username" maxlength="50" class="inputLength" id="username">
 
                 <label for="password">Mot de passe : </label>
                 <input type="password" name="password" maxlength="50" class="inputLength" id="password">
@@ -471,10 +471,10 @@ else {
         <div class="message">
             <?php
             if (isset($message)) {
-                echo $message, '<br>';
+                echo $message;
             }
             if ($manager->message) {
-                echo $manager->message, '<br>';
+                echo $manager->message;
             }
             ?>
         </div>
@@ -483,10 +483,10 @@ else {
             <form method="post">
 
                 <label for="username">Nom : </label>
-                <input type="text" name="username" maxlength="50" id="username"><br>
+                <input type="text" name="username" maxlength="50" id="username">
 
                 <label for="password">Mot de passe : </label>
-                <input type="password" name="password" maxlength="50" id="password"><br>
+                <input type="password" name="password" maxlength="50" id="password">
 
 
                 <input type="submit" value="Se connecter" name="submitConnection" id="submitFirstCo">

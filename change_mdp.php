@@ -100,7 +100,7 @@ if (isset($_SESSION['okCollab'])) {
             <div class="message">
                 <?php
                 if (isset($message)) {
-                    echo $message, '<br>';
+                    echo $message;
                 }
                 ?>
 
@@ -108,10 +108,10 @@ if (isset($_SESSION['okCollab'])) {
 
             <form method="post">
                 <label for="mdp">Nouveau mot de passe : </label>
-                <input type="password" name="password" maxlength="50" class="inputLength" id="mdp"><br>
+                <input type="password" name="password" maxlength="50" class="inputLength" id="mdp">
 
                 <label for="verifMdp">Confimer le nouveau mot de passe : </label>
-                <input type="password" name="mdp" maxlength="50" class="inputLength" id="verifMdp"><br>
+                <input type="password" name="mdp" maxlength="50" class="inputLength" id="verifMdp">
 
                 <input type="submit" value="Mettre à jour" name="submit" class="majPass">
             </form>

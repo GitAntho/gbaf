@@ -60,16 +60,16 @@ if (isset($_POST['submit'])) {
 
             <form method="post">
                 <label for="username">Nom d'utilisateur : </label>
-                <input class="inputLength" type="text" name="username" maxlength="50" id="username"><br>
+                <input class="inputLength" type="text" name="username" maxlength="50" id="username">
 
                 <label for="question">Question secrète : </label>
                 <select class="inputLength" name="question" id="question">
                     <option value="animal">Le nom de votre animal de compagnie</option>
                     <option value="amour">Prénom de votre premier amour</option>
-                </select><br>
+                </select>
 
                 <label for="reponse">Réponse : </label>
-                <input class="inputLength" type="text" name="reponse" maxlength="50" id="reponse"><br>
+                <input class="inputLength" type="text" name="reponse" maxlength="50" id="reponse">
 
                 <input type="submit" value="Récupérer mot de passe" name="submit" class="forget">
             </form>

@@ -351,10 +351,10 @@ if (isset($_POST['submitAvatar'])) {
         <div class="message">
     <?php
     if (isset($message)) {
-        echo $message, '<br>';
+        echo $message;
     }
     if ($manager->message) {
-        echo $manager->message, '<br>';
+        echo $manager->message;
     }
     ?>
 
@@ -365,13 +365,13 @@ if (isset($_POST['submitAvatar'])) {
                 <legend>Modifier des informations personnelles</legend>
 
                 <label for="nom">Nom : </label>
-                <input type="text" name="nom" maxlength="50" value="<?= htmlspecialchars($info->nom()) ?>" id="nom"><br>
+                <input type="text" name="nom" maxlength="50" value="<?= htmlspecialchars($info->nom()) ?>" id="nom">
 
                 <label for="prenom">Prénom : </label>
-                <input type="text" name="prenom" maxlength="50" value="<?= htmlspecialchars($prenom) ?>" id="prenom"><br>
+                <input type="text" name="prenom" maxlength="50" value="<?= htmlspecialchars($prenom) ?>" id="prenom">
 
                 <label for="username">Nom d'utilisateur : </label>
-                <input type="text" name="username" maxlength="50" value="<?= htmlspecialchars($info->username()) ?>" id="username"><br>
+                <input type="text" name="username" maxlength="50" value="<?= htmlspecialchars($info->username()) ?>" id="username">
 
                 <input type="submit" value="Mettre à jour" name="submitInfo" class="majProfil">
             </fieldset>
@@ -386,7 +386,7 @@ if (isset($_POST['submitAvatar'])) {
 
 
                 <label for="avatar">Nouvel avatar : </label>
-                <input type="file" name="avatar" id="avatar"><br>
+                <input type="file" name="avatar" id="avatar">
 
                 <input type="submit" value="Mettre à jour" name="submitAvatar" class="majProfil">
             </fieldset>
@@ -398,13 +398,13 @@ if (isset($_POST['submitAvatar'])) {
                 <legend>Modifier votre mot de passe</legend>
 
                 <label for="oldPassword">Ancien mot de passe : </label>
-                <input type="password" name="oldPassword" maxlength="50" id="oldPassword"><br>
+                <input type="password" name="oldPassword" maxlength="50" id="oldPassword">
 
                 <label for="password">Nouveau mot de passe : </label>
-                <input type="password" name="password" maxlength="50" id="password"><br>
+                <input type="password" name="password" maxlength="50" id="password">
 
                 <label for="mdp">Confimer le nouveau mot de passe : </label>
-                <input type="password" name="mdp" maxlength="50" id="mdp"><br>
+                <input type="password" name="mdp" maxlength="50" id="mdp">
 
                 <input type="submit" value="Mettre à jour" name="submitPassword" class="majProfil">
             </fieldset>
@@ -419,19 +419,19 @@ if (isset($_POST['submitAvatar'])) {
                 <select name="oldQuestion" id="oldQuestion">
                     <option value="animal">Le nom de votre animal de compagnie</option>
                     <option value="amour">Prénom de votre premier amour</option>
-                </select><br>
+                </select>
 
                 <label for="oldReponse">Ancienne réponse : </label>
-                <input type="text" name="oldReponse" maxlength="50" id="oldReponse"><br>
+                <input type="text" name="oldReponse" maxlength="50" id="oldReponse">
 
                 <label for="question">Nouvelle question secrète : </label>
                 <select name="question" id="question">
                     <option value="animal">Le nom de votre animal de compagnie</option>
                     <option value="amour">Prénom de votre premier amour</option>
-                </select><br>
+                </select>
 
                 <label for="reponse">Nouvelle réponse : </label>
-                <input type="text" name="reponse" maxlength="50" id="reponse"><br>
+                <input type="text" name="reponse" maxlength="50" id="reponse">
 
                 <input type="submit" value="Mettre à jour" name="submitQuestion" class="majProfil">
             </fieldset>
@@ -509,13 +509,13 @@ if ($_SESSION['id_user'] == 20)
                 <legend>Modifier votre mot de passe Administrateur</legend>
 
                 <label for="oldPassword">Ancien mot de passe : </label>
-                <input type="password" name="oldPassword" maxlength="50" id="oldPassword"><br>
+                <input type="password" name="oldPassword" maxlength="50" id="oldPassword">
 
                 <label for="password">Nouveau mot de passe : </label>
-                <input type="password" name="password" maxlength="50" id="password"><br>
+                <input type="password" name="password" maxlength="50" id="password">
 
                 <label for="mdp">Confimer le nouveau mot de passe : </label>
-                <input type="password" name="mdp" maxlength="50" id="mdp"><br>
+                <input type="password" name="mdp" maxlength="50" id="mdp">
 
                 <input type="submit" value="Mettre à jour" name="submitPasswordAdmin" class="majProfil">
             </fieldset>

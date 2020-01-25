@@ -95,10 +95,10 @@ if (isset($_SESSION['admin'])) {
     <div class="message">
         <?php
         if (isset($message)) {
-            echo $message, '<br>';
+            echo $message;
         }
         if ($manager->message) {
-            echo $manager->message, '<br>';
+            echo $manager->message;
         }
         ?>
 
@@ -108,16 +108,16 @@ if (isset($_SESSION['admin'])) {
         <fieldset>
             <legend>Créer un Utilisateur</legend>
 
-            <input type="hidden" name="type" maxlength="50" value="membre"><br>
+            <input type="hidden" name="type" maxlength="50" value="membre">
 
             <label for="username">Nom d'utilisateur : </label>
-            <input type="text" name="username" maxlength="50" id="username"><br>
+            <input type="text" name="username" maxlength="50" id="username">
 
             <label for="password">Mot de passe : </label>
-            <input type="password" name="password" maxlength="50" id="password"><br>
+            <input type="password" name="password" maxlength="50" id="password">
 
             <label for="mdp">Confimer le mot de passe : </label>
-            <input type="password" name="mdp" maxlength="50" id="mdp"><br>
+            <input type="password" name="mdp" maxlength="50" id="mdp">
 
             <input type="submit" value="Créer Utilisateur" name="submitUser" id="creatUser">
         </fieldset>
@@ -127,16 +127,16 @@ if (isset($_SESSION['admin'])) {
         <fieldset>
             <legend>Créer un Collaborateur</legend>
 
-            <input type="hidden" name="type" maxlength="50" value="collaborateur"><br>
+            <input type="hidden" name="type" maxlength="50" value="collaborateur">
 
             <label for="usernameCollab">Nom de collaborateur : </label>
-            <input type="text" name="username" maxlength="50" id="usernameCollab"><br>
+            <input type="text" name="username" maxlength="50" id="usernameCollab">
 
             <label for="passwordCollab">Mot de passe : </label>
-            <input type="password" name="password" maxlength="50" id="passwordCollab"><br>
+            <input type="password" name="password" maxlength="50" id="passwordCollab">
 
             <label for="mdpCollab">Confimer le mot de passe : </label>
-            <input type="password" name="mdp" maxlength="50" id="mdpCollab"><br>
+            <input type="password" name="mdp" maxlength="50" id="mdpCollab">
 
             <input type="submit" value="Créer Collaborateur" name="submitCollab" id="creatCollab">
         </fieldset>
@@ -153,7 +153,7 @@ if (isset($_SESSION['id_collab']) OR isset($_SESSION['id_user'])) {
         <div class="message">
             <?php
             if (isset($message)) {
-                echo $message, '<br>';
+                echo $message;
             }
             ?>
 
@@ -161,10 +161,10 @@ if (isset($_SESSION['id_collab']) OR isset($_SESSION['id_user'])) {
 
         <form method="post">
             <label for="usernameAdmin">Admin identifiant : </label>
-            <input type="text" name="admin" maxlength="50" id="usernameAdmin"><br>
+            <input type="text" name="admin" maxlength="50" id="usernameAdmin"
 
             <label for="passwordAdmin">Mot de passe : </label>
-            <input type="password" name="password" maxlength="50" id="passwordAdmin"><br>
+            <input type="password" name="password" maxlength="50" id="passwordAdmin">
 
             <input type="submit" value="Se connecter" name="submitAdmin" id="formAdmin">
         </form>
